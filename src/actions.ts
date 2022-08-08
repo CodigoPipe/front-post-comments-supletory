@@ -1,4 +1,4 @@
-import { commentI, commentII, postI, postII } from "./interfaces.js";
+import { commentI, commentII, commentIII, postI, postII, postIII } from "./interfaces.js";
 
 
 
@@ -74,7 +74,7 @@ export async function getAllPosts() {
     }
     
     export async function deleteComment(commentId:number){
-      
+
       const response:Response = await fetch(`http://localhost:8080/api/v1/delete/comment/${commentId}`, 
       {
         method: 'DELETE'
@@ -83,15 +83,31 @@ export async function getAllPosts() {
       return response;
     }
     
-    // export async function putPatient(patient:patientI){
-    //   const response:Response = await fetch('http://localhost:8080/api/v1/update/patient', 
-    //   {
-    //     method: 'PUT',
-    //     headers: {
-    //       'Content-Type': 'application/json' 
-    //     },
-    //     body: JSON.stringify(patient)
-    //   })
+    //update functions
+
+    export async function putPost(post:postIII){
+      const response:Response = await fetch('http://localhost:8080/api/v1/update/post', 
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(post)
+      })
     
-    //   return response;
-    // }
+      return response;
+    }
+
+    export async function putComment(comment:commentIII){
+      const response:Response = await fetch('http://localhost:8080/api/v1/update/comment', 
+      {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(comment)
+      })
+    
+      return response;
+    }
+    

@@ -19,6 +19,14 @@ export interface postII{
 
 }
 
+export interface postIII{
+    
+    postId: number,
+    title: string|null,
+    content: string|null,
+
+}
+
 
 
 
@@ -40,6 +48,14 @@ export interface commentII{
     postIdpost: {
         postId: number
     }
+}
+
+export interface commentIII{
+
+
+    commentId: number,
+    commentContent: string
+
 }
 
 
