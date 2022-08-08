@@ -7,7 +7,7 @@ export interface postI{
     content: string|null,
     numberOfLikes: number|null,
     userLikesPost: userLikeI[]|null,
-    comments: commentI|null
+    comments: commentI[]|null
 
 
 }
