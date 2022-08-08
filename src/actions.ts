@@ -1,4 +1,4 @@
-import { commentI, postI } from "./interfaces";
+import { commentI, postI } from "./interfaces.js";
 
 
 
