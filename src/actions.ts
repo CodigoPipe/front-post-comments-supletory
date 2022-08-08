@@ -27,7 +27,7 @@ export async function getAllPosts() {
   }
 
   
-  export async function deletePost(postId:string){
+  export async function deletePost(postId:number){
   
     const response:Response = await fetch(`http://localhost:8080/api/v1/delete/post/${postId}`, 
     {
@@ -73,7 +73,8 @@ export async function getAllPosts() {
       return response;
     }
     
-    export async function deleteComment(commentId:string){
+    export async function deleteComment(commentId:number){
+      
       const response:Response = await fetch(`http://localhost:8080/api/v1/delete/comment/${commentId}`, 
       {
         method: 'DELETE'

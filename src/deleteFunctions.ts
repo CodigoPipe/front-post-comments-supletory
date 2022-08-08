@@ -5,7 +5,9 @@ export function deleteSelectedPost(){
     
     const postIdDelete = document.querySelector("#delete-input-post") as  HTMLInputElement;
 
-    deletePost(postIdDelete.value)
+    deletePost(parseInt(postIdDelete.value)).then(response =>{
+        console.log("succes")
+    })
 
 }
 
@@ -13,6 +15,22 @@ export function deleteSelectedComment(){
     
     const commentIdDelete = document.querySelector("#delete-input-comment") as  HTMLInputElement;
 
-    deleteComment(commentIdDelete.value)
+    deleteComment(parseInt(commentIdDelete.value)).then(response =>{
+        console.log("succes")
+    })
+
 
 }
+
+
+// export function clearDivCreations(){
+
+//     const creatorDiv = document.querySelector("#post-created-div") as HTMLDivElement
+
+//     const list = document.getElementsByTagName("div")
+
+//     creatorDiv.remove(l)
+
+
+
+// }
