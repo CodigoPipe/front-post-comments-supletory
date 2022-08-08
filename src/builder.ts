@@ -1,11 +1,25 @@
-import { createPost, getAllPosts } from "./actions.js"
-import { postI } from "./interfaces.js"
+import { createComment, createPost, getAllPosts } from "./actions.js"
+import { commentII, postI, postII } from "./interfaces.js"
 
 
+
+export function createNewPost(){
+    const postTitle = document.querySelector("#input-title-post") as  HTMLInputElement;
+    const postContent = document.querySelector("#input-content-post") as  HTMLInputElement;
+
+
+    const newPost: postII = {
+
+        title: postTitle.value,
+        content: postContent.value
+      
+    }
+
+    createPost(newPost);
+}
 
 export function getAndCreatePosts(){
     
-
     getAllPosts().then(posts =>{
         createAllPosts(posts)
     })
@@ -21,12 +35,13 @@ function createAllPosts(posts: postI[]){
 
 function buildHtmlPost(post: postI){
    
+    
     const createdPostDiv = document.querySelector('#post-created-div') as HTMLDivElement;
 
 
 
-    const newDiv:HTMLDivElement = document.createElement('div');
-    newDiv.className = 'post-created-son'
+    const postWithCommentsContainer:HTMLDivElement = document.createElement('div');
+    postWithCommentsContainer.className = 'post-created-son'
     
     const h2PostTitle: HTMLHeadElement = document.createElement('h2');
     h2PostTitle.className = "h2-titles"
@@ -49,20 +64,20 @@ function buildHtmlPost(post: postI){
     //divs that complement this main div created
     const contentOfPostDiv = document.createElement('div');
     contentOfPostDiv.className = 'content-post-created'
-    createdPostDiv.append(contentOfPostDiv);
-
+    
     contentOfPostDiv.append(h2PostTitle, postContent, h3PostId, h3PostLikes)
+    postWithCommentsContainer.append(contentOfPostDiv);
 
     const createdPostCommentsDiv = document.createElement('div');
     createdPostCommentsDiv.className = 'comments-post-created'
-    createdPostDiv.append(createdPostCommentsDiv);
+    postWithCommentsContainer.append(createdPostCommentsDiv);
 
 
     //for each to create comments
     post.comments?.forEach(comment => {
 
         const singleCommentDiv:HTMLDivElement = document.createElement('div');
-        newDiv.className = 'single-comment-div'
+        singleCommentDiv.className = 'single-comment-div'
 
         const h2CommentId: HTMLHeadElement = document.createElement('h2');
         h2CommentId.className = "h2-id-comment"
@@ -81,7 +96,28 @@ function buildHtmlPost(post: postI){
 
     })
 
-    
+    createdPostDiv.append(postWithCommentsContainer)
+
+}
+
+
+//create Comment
+
+export function createNewComment(){
+
+    const commentContentNew = document.querySelector("#input-comment-content") as  HTMLInputElement;
+    const commentPostIdNew = document.querySelector("#input-comment-postid") as  HTMLInputElement;
+
+
+    const newComment: commentII ={
+        commentContent: commentContentNew.value,
+        postIdpost: {
+            postId: parseInt(commentPostIdNew.value)
+        }
+    }
+
+    createComment(newComment)
+
 
 }
 

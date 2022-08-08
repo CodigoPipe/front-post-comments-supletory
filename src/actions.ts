@@ -1,4 +1,4 @@
-import { commentI, postI } from "./interfaces.js";
+import { commentI, commentII, postI, postII } from "./interfaces.js";
 
 
 
@@ -12,7 +12,7 @@ export async function getAllPosts() {
   } 
 
   
-  export async function createPost(post: postI){
+  export async function createPost(post: postII){
   
     const response:Response = await fetch('http://localhost:8080/api/v1/create/post', 
     {
@@ -60,7 +60,7 @@ export async function getAllPosts() {
       return data
     } 
     
-    export async function createComment(comment: commentI){
+    export async function createComment(comment: commentII){
       const response:Response = await fetch('http://localhost:8080/api/v1/create/comment', 
       {
         method: 'POST',

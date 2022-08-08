@@ -12,6 +12,17 @@ export interface postI{
 
 }
 
+export interface postII{
+    
+    title: string|null,
+    content: string|null,
+
+}
+
+
+
+
+
 export interface commentI{
 
     commentId: number|null,
@@ -21,6 +32,14 @@ export interface commentI{
     userLikesComment: userLikeI|null,
 
 
+}
+
+export interface commentII{
+
+    commentContent: string,
+    postIdpost: {
+        postId: number
+    }
 }
 
 
