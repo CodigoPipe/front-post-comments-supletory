@@ -19,6 +19,9 @@ export function createNewPost(){
 }
 
 export function getAndCreatePosts(){
+
+    const createdPostDiv = document.querySelector('#post-created-div') as HTMLDivElement;
+    createdPostDiv.innerHTML = "";
     
     getAllPosts().then(posts =>{
         createAllPosts(posts)
@@ -59,14 +62,41 @@ function buildHtmlPost(post: postI){
     h3PostLikes.className = "h3-titles"
     h3PostLikes.innerText = `Likes: ${post.numberOfLikes}`
 
-   
+    //borrar hasta el siguiente comentario si no funciona
+    const h2PostLikeSectionTitle: HTMLHeadElement = document.createElement('h2');
+    h2PostLikeSectionTitle.className = "h2-titles"
+    h2PostLikeSectionTitle.innerText = `Likes`
 
-    //divs that complement this main div created
     const contentOfPostDiv = document.createElement('div');
     contentOfPostDiv.className = 'content-post-created'
     
-    contentOfPostDiv.append(h2PostTitle, postContent, h3PostId, h3PostLikes)
+    contentOfPostDiv.append(h2PostTitle, postContent, h3PostId, h3PostLikes, h2PostLikeSectionTitle)
     postWithCommentsContainer.append(contentOfPostDiv);
+
+    post.users?.forEach(user =>{
+
+    
+        const h3userId: HTMLHeadElement = document.createElement('h3');
+        h3userId.className = "h3-titles"
+        h3userId.innerText = `User Id: ${user.userId}`
+
+        const h3userName: HTMLHeadElement = document.createElement('h3');
+        h3userName.className = "h3-titles"
+        h3userName.innerText = `Likes: ${user.userName}`
+
+        const h3userDni: HTMLHeadElement = document.createElement('h3');
+        h3userDni.className = "h3-titles"
+        h3userDni.innerText = `DNI: ${user.dni}`
+
+        contentOfPostDiv.append(h3userId,h3userName,h3userDni)
+
+
+    })
+
+   
+
+    //divs that complement this main div created
+    
 
     const createdPostCommentsDiv = document.createElement('div');
     createdPostCommentsDiv.className = 'comments-post-created'
@@ -91,7 +121,31 @@ function buildHtmlPost(post: postI){
         h3CommentLikes.className = "h3-titles"
         h3CommentLikes.innerText = `Likes: ${comment.numberOfLikesComment}`
 
-        singleCommentDiv.append(h2CommentId, commentContent, h3CommentLikes )
+        const h2CommentLikes: HTMLHeadElement = document.createElement('h2');
+        h2CommentLikes.className = "h2-id-comment"
+        h2CommentLikes.innerText = `Likes of comment`
+
+        singleCommentDiv.append(h2CommentId, commentContent, h3CommentLikes , h2CommentLikes)
+
+        comment.users?.forEach(user =>{
+
+            const h3userId: HTMLHeadElement = document.createElement('h3');
+            h3userId.className = "h3-titles"
+            h3userId.innerText = `User Id: ${user.userId}`
+
+            const h3userName: HTMLHeadElement = document.createElement('h3');
+            h3userName.className = "h3-titles"
+            h3userName.innerText = `Likes: ${user.userName}`
+
+            const h3userDni: HTMLHeadElement = document.createElement('h3');
+            h3userDni.className = "h3-titles"
+            h3userDni.innerText = `DNI: ${user.dni}`
+
+            singleCommentDiv.append(h3userId,h3userName,h3userDni)
+
+        })
+
+
         createdPostCommentsDiv.append(singleCommentDiv)
 
     })
