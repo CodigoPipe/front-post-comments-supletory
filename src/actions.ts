@@ -1,4 +1,4 @@
-import { commentI, commentII, commentIII, postI, postII, postIII } from "./interfaces.js";
+import { commentI, commentII, commentIII, postI, postII, postIII, userIComment, userIPost } from "./interfaces.js";
 
 
 
@@ -52,13 +52,13 @@ export async function getAllPosts() {
   
   
   // methods for patients
-  export async function getAllComments() {
-      const response:Response = await fetch('http://localhost:8080/api/v1/all/comments')
+  // export async function getAllComments() {
+  //     const response:Response = await fetch('http://localhost:8080/api/v1/all/comments')
     
-      const data:commentI[] = await response.json()
+  //     const data:commentI[] = await response.json()
     
-      return data
-    } 
+  //     return data
+  //   } 
     
     export async function createComment(comment: commentII){
       const response:Response = await fetch('http://localhost:8080/api/v1/create/comment', 
@@ -110,4 +110,48 @@ export async function getAllPosts() {
     
       return response;
     }
+
+
+    //USER METHODS
     
+
+    export async function createUserComment(user: userIComment){
+      const response:Response = await fetch('http://localhost:8080/api/v1/create/user/comment', 
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(user)
+      })
+
+      return response;
+    }
+
+
+    export async function createUserPost(user: userIPost){
+      const response:Response = await fetch('http://localhost:8080/api/v1/create/user/post', 
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(user)
+      })
+
+      return response;
+    }
+
+
+    export async function deleteUser(userId:number){
+
+      const response:Response = await fetch(`http://localhost:8080/api/v1/delete/comment/${userId}`, 
+      {
+        method: 'DELETE'
+      })
+    
+      return response;
+    }
+
+
+

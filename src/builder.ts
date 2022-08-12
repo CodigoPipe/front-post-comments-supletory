@@ -89,7 +89,7 @@ function buildHtmlPost(post: postI){
 
         const h3CommentLikes: HTMLHeadElement = document.createElement('h3');
         h3CommentLikes.className = "h3-titles"
-        h3CommentLikes.innerText = `Likes: ${comment.numberOfLikes}`
+        h3CommentLikes.innerText = `Likes: ${comment.numberOfLikesComment}`
 
         singleCommentDiv.append(h2CommentId, commentContent, h3CommentLikes )
         createdPostCommentsDiv.append(singleCommentDiv)

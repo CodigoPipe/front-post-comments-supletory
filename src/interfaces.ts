@@ -6,8 +6,8 @@ export interface postI{
     title: string|null,
     content: string|null,
     numberOfLikes: number|null,
-    userLikesPost: userLikeI[]|null,
-    comments: commentI[]|null
+    users: userForPostI[]|null,
+    comments: commentForPostI[]|null
 
 
 }
@@ -37,7 +37,7 @@ export interface commentI{
     commentContent: string,
     numberOfLikes: number|null,
     postIdpost: postI,
-    userLikesComment: userLikeI|null,
+    userLikesComment: userIPost|null,
 
 
 }
@@ -58,9 +58,47 @@ export interface commentIII{
 
 }
 
+//this one is created for postI
+export interface commentForPostI{
 
 
-export interface userLikeI{
-    
+    commentId: number,
+    commentContent: string
+    numberOfLikesComment: number|null,
+    users: userForPostI[]|null
+
 }
+
+
+
+//USER INTERFACES
+
+
+export interface userIComment{
+
+    userName: string,
+    dni: string,
+    commentId: number
+
+}
+
+export interface userIPost{
+
+    userName: string,
+    dni: string,
+    postIdpost: number
+
+}
+
+//this is created por the postI
+export interface userForPostI{
+
+    userId: number
+    userName: string,
+    dni: string,
+
+}
+
+
+
 
