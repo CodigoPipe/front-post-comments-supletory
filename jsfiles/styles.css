@@ -1,0 +1,126 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+
+
+::placeholder{
+    color: grey;
+ }
+
+
+#header{
+    background-color: white;
+}
+
+#header-title{
+    font-size: 100px;
+    font-style: italic;
+    color: #6510BF;
+    text-align: center;
+    
+}
+
+#header-paragraph{
+    font-size: 50px;
+    color: #6510BF;;
+    text-align: center;
+}
+
+#create-post-comments-father{
+    display: flex;
+    justify-content: space-around;
+}
+
+.create-post-comments-son{
+    width: 300px;
+   height: 400px;
+   margin: 0%;
+   background-color: #BFEFF8;
+   border-radius: 20px;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+}
+
+.create-post-comments-son h1{
+
+    color: #6510BF;
+    font-style: italic;
+}
+
+.button-creators{
+    font-size: 21px;
+    margin-top: 6px;
+    border-radius: 10px;
+}
+
+.button-creators:hover{
+
+
+    background: #D7BFF8;
+}
+
+
+/* for dom new elements */
+
+#post-created-div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 45px;
+}
+
+.post-created-son{
+    background-color: #BFEFF8;
+   border-radius: 20px;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.content-post-created p{
+    color: #6510BF;
+    font-size: 20px;
+}
+
+.content-post-created h2{
+    color: #6510BF;
+    padding: 10px;
+    font-style: italic;
+    font-size: 35px;
+}
+
+.content-post-created h3{
+    color: #6510BF;
+    font-style: italic;
+    font-size: 20px;
+}
+
+
+.comments-post-created p{
+    color: #04A21E;
+    font-size: 15px;
+}
+
+.comments-post-created h2{
+    color: #04A21E;
+    font-style: italic;
+    font-size: 30px;
+}
+
+.comments-post-created h3{
+    color: #04A21E;
+    font-style: italic;
+    font-size: 15px;
+}
+
+
+    

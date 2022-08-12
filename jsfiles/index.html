@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Post & Comments</title>
+</head>
+
+<body>
+    
+    <div id="header">
+        <header id="header-title">Welcome, be free to add your opinion in a post</header>
+        <p id="header-paragraph">you can comment other post with your opinion if you like</p>
+    </div>
+
+    <div id="create-post-comments-father">
+
+
+        <div class="create-post-comments-son">
+
+            <h1>Welcome, please leave a Post</h1>
+            <input type="text" placeholder="Title" id="input-title-post"> <br>
+            <input type="text" placeholder="Post content" id="input-content-post"> <br>
+            <button class="button-creators" id="send-post-button">Send Post</button>
+            <button class="button-creators" id="get-all-post-button">Get All Post</button>
+
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>If you see a post below, introduce the ID and leave a comment</h1>
+            <input type="text" placeholder="PostId" id="input-comment-postid"> <br>
+            <input type="text" placeholder="Comment content" id="input-comment-content"> <br>
+            <button class="button-creators" id="send-comment-button">Send Comment</button>
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>Introduce the ID of the Post you want to delete</h1>
+            <input type="text" placeholder="PostId" id="delete-input-post"> <br>
+            <button class="button-creators" id="delete-post-button">Delete Post</button>
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>Introduce the ID of the Comment you want to delete</h1>
+            <input type="text" placeholder="CommentId" id="delete-input-comment"> <br>
+            <button class="button-creators" id="delete-comment-button">Delete Comment</button>
+
+
+        </div>
+
+
+        <div class="create-post-comments-son">
+
+            <h1>Update a post introducing the ID</h1>
+            <input type="text" placeholder="PostId" id="update-input-postId"> <br>
+            <input type="text" placeholder="Title" id="update-input-postTitle"> <br>
+            <input type="text" placeholder="Content" id="update-input-postContent"> <br>
+            <button class="button-creators" id="update-post-button">Update Post</button>
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>Update a comment introducing the ID</h1>
+            <input type="text" placeholder="CommentId" id="update-input-commentId"> <br>
+            <input type="text" placeholder="CommentContent" id="update-input-commentContent"> <br>
+            <button class="button-creators" id="update-comment-button">Update Comment</button>
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>You like a post? put the ID and introduce the user</h1>
+            <input type="text" placeholder="PostId" id="create-user-input-postId"> <br>
+            <input type="text" placeholder="User name" id="create-user-input-username-post"> <br>
+            <input type="text" placeholder="dni" id="create-user-input-dni-post"> <br>
+            <button class="button-creators" id="create-user-post-button">Create User and like</button>
+
+
+        </div>
+
+        <div class="create-post-comments-son">
+
+            <h1>You like a Comment? put the ID and introduce the user</h1>
+            <input type="text" placeholder="CommentId" id="create-user-input-commentId"> <br>
+            <input type="text" placeholder="User name" id="create-user-input-username-comment"> <br>
+            <input type="text" placeholder="dni" id="create-user-input-dni-comment"> <br>
+            <button class="button-creators" id="create-user-comment-button">Create User and like</button>
+
+        </div>
+
+        <!-- <div class="create-post-comments-son">
+
+            <h1>Update an User with the user Id</h1>
+            <input type="text" placeholder="UserId" id="update-user-input-userId"> <br>
+            <input type="text" placeholder="User name" id="create-user-input-username-comment"> <br>
+            <input type="text" placeholder="dni" id="create-user-input-dni-comment"> <br>
+            <button class="button-creators" id="create-user-comment-button">Create User and like</button>
+
+        </div> -->
+
+        <div class="create-post-comments-son">
+
+            <h1>Delete User with the User Id</h1>
+            <input type="text" placeholder="UserId" id="delete-user-input-userId"> <br>
+            <button class="button-creators" id="delete-user-button">Delete User and like</button>
+
+        </div>
+
+
+    
+
+    </div>
+
+
+
+    <div id="post-created-div">
+
+        
+    
+    </div>
+
+
+
+
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
