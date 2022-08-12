@@ -145,7 +145,7 @@ export async function getAllPosts() {
 
     export async function deleteUser(userId:number){
 
-      const response:Response = await fetch(`http://localhost:8080/api/v1/delete/comment/${userId}`, 
+      const response:Response = await fetch(`http://localhost:8080/api/v1/delete/user/${userId}`, 
       {
         method: 'DELETE'
       })

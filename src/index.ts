@@ -1,6 +1,6 @@
 import { createNewComment, createNewPost, getAndCreatePosts } from "./builder.js";
 import { sendUserComment, sendUserPost } from "./createUserFunctions.js";
-import { deleteSelectedComment, deleteSelectedPost } from "./deleteFunctions.js";
+import { deleteSelectedComment, deleteSelectedPost, deleteSelectedUser } from "./deleteFunctions.js";
 import { updateSelectedComment, updateSelectedPost } from "./updateFunctions.js";
 
 
@@ -45,3 +45,6 @@ getUserPostButton.addEventListener("click", sendUserPost);
 
 const getUserCommentButton = document.querySelector("#create-user-comment-button") as HTMLButtonElement;
 getUserCommentButton.addEventListener("click", sendUserComment);
+
+const deleteUserButton = document.querySelector("#delete-user-button") as HTMLButtonElement;
+deleteUserButton.addEventListener("click", deleteSelectedUser);
